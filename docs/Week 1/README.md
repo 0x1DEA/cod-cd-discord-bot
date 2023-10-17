@@ -69,7 +69,7 @@ Now we're ready to get down to business.
 
 ```js
 const { Client, Events, GatewayIntentBits } = require('discord.js');
-const token = 'MTE2MzYwMDIwODg5NTE1MjI0OQ.GLcluh.-zICHlylYKykjGGV4AniNxJsUbel_WmTLQxkjA';
+const token = 'YOUR_TOKEN_HERE';
 
 const client = new Client({ intents: [
         GatewayIntentBits.Guilds,
@@ -78,7 +78,7 @@ const client = new Client({ intents: [
     ] });
 
 client.once(Events.ClientReady, client => {
-    console.log(`Bot online! ${client.user.tag}`);
+    console.log(`Bot is online, user ${client.user.tag}`);
 });
 
 client.on(Events.MessageCreate, (message) => {
@@ -92,4 +92,17 @@ client.on(Events.MessageCreate, (message) => {
 client.login(token);
 ```
 
-It's alive!!!
+Run the bot by running
+```shell
+node index.js
+```
+If you moved the index.js file make sure the path is correct. You should get this message after a few moments.
+```
+Bot is online, example#1234
+```
+
+After you invite it to your Discord server (generate a link here https://discordapi.com/permissions.html), try typing "hi" and you should see the bot respond with an appropriate greeting.
+
+![img_3.png](img_3.png)
+
+Congratulations! You've got a basic Discord bot now! ☆彡
