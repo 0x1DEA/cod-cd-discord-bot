@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testy</title>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+</head>
+<!--
+This file is only for extra.js
+-->
+<body class="flex items-center justify-center bg-gray-100 h-screen w-full">
+<form class="flex flex-col rounded-md bg-gray-300 space-y-4 p-4 w-full max-w-2xl" method="POST" action="/message">
+    <h1 class="font-bold text-3xl">Cool Interface</h1>
+    <label class="flex flex-col space-y-0.5">
+        <span>Message</span>
+        <input class="rounded border-none" name="message" type="text" placeholder="Message..."/>
+    </label>
+    <input class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition-colors rounded py-1 px-2" value="Send Message" type="submit"/>
+</form>
+</body>
+</html>

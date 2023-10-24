@@ -53,15 +53,15 @@ Before we move any further, there is something else must do. In order to have a 
 
 Visit the [Discord Developer Portal](https://discord.com/developers) and sign in with your Discord account. You will be greeted with a dashboard for your "Applications." Let's create a new one. In the top right corner click the "New Application" button.
 
-![img.png](img.png)
+![img.png](assets/img.png)
 
 Give it a friendly name and agree to the terms and policies.
 
-![img_1.png](img_1.png)
+![img_1.png](assets/img_1.png)
 
 And on the sidebar, visit the "Bot" tab. Click "Reset Token" and make sure you keep that code safe and don't share it with anyone.
 
-![img_2.png](img_2.png)
+![img_2.png](assets/img_2.png)
 
 Now we're ready to get down to business.
 
@@ -94,15 +94,15 @@ client.login(token);
 
 Run the bot by running
 ```shell
-node index.js
+node app.js
 ```
-If you moved the index.js file make sure the path is correct. You should get this message after a few moments.
+If you moved the app.js file make sure the path is correct. You should get this message after a few moments.
 ```
 Bot is online, example#1234
 ```
 
 After you invite it to your Discord server (generate a link here https://discordapi.com/permissions.html), try typing "hi" and you should see the bot respond with an appropriate greeting.
 
-![img_3.png](img_3.png)
+![img_3.png](assets/img_3.png)
 
 Congratulations! You've got a basic Discord bot now! ☆彡
