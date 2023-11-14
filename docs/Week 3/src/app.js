@@ -5,8 +5,7 @@
  * Topics: Registering slash commands
  *
  * Exercises for the reader:
- * - Add your own commands
- * - Add error checking to help you debug
+ * - Add your own command files
  */
 
 // Import API functions we need from discord.js
