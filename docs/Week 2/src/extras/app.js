@@ -1,5 +1,5 @@
 const {Client, Events, GatewayIntentBits, SlashCommandBuilder, Collection, REST, Routes} = require('discord.js');
-const token = 'INSERT_TOKEN_HERE';
+const token = 'TOKEN_HERE';
 
 /**
  * This file has some extra stuff.
