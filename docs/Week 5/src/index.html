@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Discord Bot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+</head>
+<body class="flex bg-gray-100 h-screen w-full text-gray-800">
+<div class="flex-col space-y-2 bg-gray-200 p-4 w-64">
+    <h1 class="font-bold text-2xl border-b border-gray-300">Dashboard</h1>
+    <div class="flex space-x-2 px-2 py-1 items-center bg-gray-300 rounded-md">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+
+        <span class="font-bold">Home</span>
+    </div>
+</div>
+<div class="flex flex-col space-y-4 px-8 py-4 w-full">
+    <h1 class="font-bold text-4xl">Home</h1>
+    <div id="list" class="flex flex-col space-y-2">
+
+    </div>
+</div>
+<script>
+    window.addEventListener('load', async () => {
+        let list = document.getElementById('list');
+        let users = await fetch('/data').then(res => res.json());
+
+        for (user in users) {
+            let el = document.createElement('div');
+            el.className = 'flex justify-between px-2 py-1 rounded-md bg-gray-200 shadow hover:shadow-lg transition'
+
+            let name = document.createElement('span');
+            name.innerText = users[user].username;
+            let xp = document.createElement('span');
+            xp.innerText = users[user].xp;
+
+            el.appendChild(name);
+            el.appendChild(xp);
+
+            list.appendChild(el);
+        }
+
+        if (Object.keys(users).length === 0) {
+            let el = document.createElement('div');
+            el.innerText = 'No users with XP. Try sending a message!';
+            el.className = 'rounded-md px-2 py-1 text-center italic bg-gray-200 text-gray-500';
+            list.appendChild(el);
+        }
+    });
+</script>
+</body>
+</html>

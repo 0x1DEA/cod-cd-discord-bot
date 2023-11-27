@@ -58,6 +58,10 @@ client.once(Events.ClientReady, async client => {
         res.sendFile('index.html', {root: path.join(__dirname)})
     })
 
+    app.get('/data', (req, res) => {
+        res.send(data.xp);
+    })
+
     app.post('/message', (req, res) => {
         client.channels.fetch('1163619698693390338').then((c) => {
             if (c === null) return;
