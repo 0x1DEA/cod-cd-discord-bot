@@ -6,11 +6,12 @@ const {Events} = require("discord.js");
 reload().then(async () => {
     Bot.client.once(Events.ClientReady, async (client) => console.log(`Bot online! ${client.user.tag}`));
 
-    process.on('SIGTERM', () => {
+    process.on('SIGINT', () => {
         // TODO: save bot data.
 
         Bot.http.close(() => {
-            console.log('Webserver stopped.')
+            console.log('Webserver stopped.');
+            process.exit();
         })
     });
 
